@@ -7,10 +7,11 @@ import blue from "./blue.png";
 import purp from "./purp.png";
 import black from "./black.png";
 import green from "./green.png";
+import Modal from "./Modal";
 
 function App() {
   const [value, setValue] = useState(0);
-  const [isToggled, setToggle] = useState(1);
+  const [isToggled, setToggle] = useState(false);
 
   return (
     <div>
@@ -19,23 +20,9 @@ function App() {
         <h1>Header</h1>
       </Header>
       <Container>
-        <AnimatePresence>
-          {isToggled && (
-            <motion.h2
-              initial={{ opacity: 0 }}
-              animate={{ x: value + "px", opacity: isToggled }}
-              exit={{ opacity: 0 }}
-            >
-              Super Cool
-            </motion.h2>
-          )}
-        </AnimatePresence>
-        {/* set toggle of the title through button */}
-        <button onClick={() => setToggle((prevValue) => (prevValue ? 0 : 1))}>
-          Toggle
-        </button>
+        {/* set open of the Modal through button */}
+        <button onClick={() => setToggle(true)}>Open Modal</button>
 
-        {/* animate the value from the range input */}
         <input
           type='range'
           min='-100'
@@ -43,6 +30,14 @@ function App() {
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
+
+        <Modal isToggled={isToggled} setToggle={setToggle}>
+          <Card style={{ background: "var(--purp)" }}>
+            <h3>Some card</h3>
+            <img src={purp} />
+          </Card>
+        </Modal>
+
         <CardGrid>
           <Card style={{ background: "var(--purp)" }}>
             <h3>Some card</h3>
