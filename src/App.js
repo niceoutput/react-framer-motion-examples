@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardGrid, Container, Header } from "./Elements";
 import "./App.css";
 import Menu from "./Menu";
@@ -8,6 +7,7 @@ import purp from "./purp.png";
 import black from "./black.png";
 import green from "./green.png";
 import Modal from "./Modal";
+import Accordion from "./Accordion";
 
 function App() {
   const [value, setValue] = useState(0);
@@ -37,7 +37,7 @@ function App() {
             <img src={purp} />
           </Card>
         </Modal>
-
+        <Accordion />
         <CardGrid>
           <Card style={{ background: "var(--purp)" }}>
             <h3>Some card</h3>
