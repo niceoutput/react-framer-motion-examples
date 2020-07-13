@@ -8,15 +8,18 @@ import black from "./black.png";
 import green from "./green.png";
 import Modal from "./Modal";
 import Accordion from "./Accordion";
+import Nav from "./Nav";
 
 function App() {
   const [value, setValue] = useState(0);
   const [isToggled, setToggle] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
     <div>
       <Header>
-        <Menu />
+        <Menu onClick={() => setIsNavOpen(true)} />
+        <Nav isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
         <h1>Header</h1>
       </Header>
       <Container>
@@ -34,26 +37,26 @@ function App() {
         <Modal isToggled={isToggled} setToggle={setToggle}>
           <Card style={{ background: "var(--purp)" }}>
             <h3>Some card</h3>
-            <img src={purp} />
+            <img src={purp} alt='' />
           </Card>
         </Modal>
         <Accordion />
         <CardGrid>
           <Card style={{ background: "var(--purp)" }}>
             <h3>Some card</h3>
-            <img src={purp} />
+            <img src={purp} alt='' />
           </Card>
           <Card style={{ background: "var(--blue)" }}>
             <h3>Some card</h3>
-            <img src={blue} />
+            <img src={blue} alt='' />
           </Card>
           <Card style={{ background: "var(--black)" }}>
             <h3>Some card</h3>
-            <img src={black} />
+            <img src={black} alt='' />
           </Card>
           <Card style={{ background: "var(--green)" }}>
             <h3>Some card</h3>
-            <img src={green} />
+            <img src={green} alt='' />
           </Card>
         </CardGrid>
       </Container>
