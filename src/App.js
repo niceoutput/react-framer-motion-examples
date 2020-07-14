@@ -42,7 +42,11 @@ function App() {
         </Modal>
         <Accordion />
         <CardGrid>
-          <Card style={{ background: "var(--purp)" }}>
+          <Card
+            whileHover={{ scale: [1.02, 0.9, 1.2] }}
+            whileTap={{ background: "var(--red)" }}
+            style={{ background: "var(--purp)" }}
+          >
             <h3>Some card</h3>
             <img src={purp} alt='' />
           </Card>
