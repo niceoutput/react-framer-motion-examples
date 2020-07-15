@@ -15,6 +15,7 @@ import green from "./green.png";
 import Modal from "./Modal";
 import Accordion from "./Accordion";
 import Nav from "./Nav";
+import Squares from "./Squares";
 
 function App() {
   const [value, setValue] = useState(0);
@@ -33,6 +34,7 @@ function App() {
         <h1>Header</h1>
       </Header>
       <Container>
+        <Squares />
         {/* set open of the Modal through button */}
         <button onClick={() => setToggle(true)}>Open Modal</button>
 
